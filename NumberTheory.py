@@ -33,15 +33,6 @@ class PlayGround(object):
         self.jugs[jug.getName()] = jug.getValue()
     
     
-    def PourAllToOther(self, jug, other):
-        #(x,y) --> (0, x + y)     if x + y <= b
-        if jug.getValue() + other.getValue() <= other.getCap():
-            other.setValue(other.getValue() + jug.getValue())
-            jug.setValue(0)
-            self.jugs[jug.getName()] = jug.getValue()
-            self.jugs[other.getName()] = other.getValue() 
-    
-    
     def PourToOther(self, jug, other):
         if jug.getValue() + other.getValue() <= other.getCap():
             #(x,y) --> (0 , x + y)          if x + y < b
@@ -100,3 +91,4 @@ def JugAlgorithm(target, jugs):
             return p
     return init
 print(JugAlgorithm(7, [jug(3), jug(10)]))
+
